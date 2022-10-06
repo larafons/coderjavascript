@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Cartelera de estrenos de series y peliculas</title>
+</head>
+<body>
+    <main>
+        <h1>Cartelera de series y peliculas: donde podes verlas</h1>
+        <p>Pulsando este boton podes buscar si contamos con informacion de una pelicula o serie que te gustaria mirar!</p>
+        <input type="button" onclick="buscar()" value="Buscar" id="buscarswal">
+        <input type="button" onclick="listarpelis()" value="Ver peliculas disponibles">
+        <input type="button" onclick="listarseries()" value="Ver series disponibles">
+        <input type="button" onclick="verFavs()" value="Ver mis favoritas">
+        <h3 id="titulofavs"></h3>
+        <ul class="lista" id="listafavs"></ul>
+        <h3 id="titulopelis"></h3>
+        <ul class="lista" id="listapelis"></ul>
+        <h3 id="tituloseries"></h3>
+        <ul class="lista" id="listaseries"></ul>
+    </main>
+    <aside>
+
+    </aside>
+    <script src="js/index.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

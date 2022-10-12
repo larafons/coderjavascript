@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    margin: 10px;
+}
+
+main{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 18px;
+}
+
+body{
+    background-color: rgb(224, 234, 233);
+    font: 15px 'trebuchet MS', 'lucida sans';
+    text-align: center;
+}
+
+.image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-container img {
+    width: 70%;
+    align-items: center;
+}
+
+article {
+    margin: 5px;
+    padding: 8px;
+    box-shadow: 0px 0px 1px #000;
+}
+
+a{
+    margin: 10px;
+}

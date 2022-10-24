@@ -11,8 +11,6 @@ function getPersonajes(done) {
 
 getPersonajes(data=> {
 
-    console.log(data)
-
     data.forEach(personaje => {
         
         const ar = document.createRange().createContextualFragment(/*html*/`

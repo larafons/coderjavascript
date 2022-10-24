@@ -70,13 +70,7 @@ let pelilistada= false //para que no se dupliquen las peliculas
 let serielistada= false
 
 function comprobarContenido(contenido, lista){
-    for (var i = 0; i < lista.length; i++){
-        let cont = lista[i].nombre.toString()
-        if (contenido == cont.toLowerCase()){
-            return true;
-        }
-    }
-    return false
+    return lista.some( item => item.nombre.toLowerCase().includes(contenido.toLowerCase()))
 }
 
 function buscar() {

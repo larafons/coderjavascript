@@ -68,6 +68,8 @@ const buscarSwal = document.getElementById("buscarswal")
 
 let pelilistada= false //para que no se dupliquen las peliculas
 let serielistada= false
+let favslistada= false
+let i=0 //contador para favoritos
 
 function comprobarContenido(contenido, lista){
     return lista.some( item => item.nombre.toLowerCase().includes(contenido.toLowerCase()))
@@ -106,8 +108,6 @@ function buscar() {
                 }
         })
 }
-
-let i=0 //contador para favoritos
 
 function listar(lista1, lista2){
     for (const elemento of lista2){
@@ -155,11 +155,14 @@ function listarseries(){
 function verFavs(){
     let listafavs= document.getElementById("listafavs")
     document.getElementById("titulofavs").innerHTML= "Contenido favorito: "
-    for (let i = 0; i < localStorage.length; i++){
-        let clave = localStorage.key(i)
-        let elemento = localStorage.getItem(clave)
-        let li = document.createElement("li")
-        li.innerHTML= elemento
-        listafavs.appendChild(li)
+    if (!favslistada){
+        for (let i = 0; i < localStorage.length; i++){
+            let clave = localStorage.key(i)
+            let elemento = localStorage.getItem(clave)
+            let li = document.createElement("li")
+            li.innerHTML= elemento
+            listafavs.appendChild(li)
+        }
     }
+    favslistada= true
 }

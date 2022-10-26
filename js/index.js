@@ -61,6 +61,30 @@ const series = [
         nombre: 'Game Of Thrones',
         imagen: "../img/GOT.jpg",
         link: 'https://play.hbomax.com/page/urn:hbo:page:GVU2cggagzYNJjhsJATwo:type:series'
+    },
+    {
+        id: 8,
+        nombre: 'Pretty Little Liars',
+        imagen: "../img/pll.jpeg",
+        link: 'https://play.hbomax.com/page/urn:hbo:page:GXdMTbQrnTaXCPQEAAA9W:type:series'
+    },
+    {
+        id:9,
+        nombre: 'Anne with an E',
+        imagen: '../img/annewithane.jpg',
+        link: 'https://www.netflix.com/search?q=anne&jbv=80136311'
+    },
+    {
+        id:10,
+        nombre: 'Fate: The Winx Saga',
+        imagen: '../img/fate.jpg',
+        link: 'https://www.netflix.com/browse?jbv=80220679'
+    },
+    {
+        id:11,
+        nombre: 'Bridgerton',
+        imagen: '../img/bridgerton.jpeg',
+        link: 'https://www.netflix.com/browse?jbv=80232398'
     }
 ]
 
@@ -69,14 +93,13 @@ const buscarSwal = document.getElementById("buscarswal")
 let pelilistada= false //para que no se dupliquen las peliculas
 let serielistada= false
 let favslistada= false
-let i=0 //contador para favoritos
+let i=localStorage.length //contador para favoritos
 
 function comprobarContenido(contenido, lista){
     return lista.some( item => item.nombre.toLowerCase().includes(contenido.toLowerCase()))
 }
 
 function buscar() {
-    //no se por que esta parte no me funciona :(
     Swal.fire({
         title: 'Que pelicula o serie que estas buscando?',
         input: 'text',
@@ -154,6 +177,7 @@ function listarseries(){
 
 function verFavs(){
     let listafavs= document.getElementById("listafavs")
+    listafavs.innerHTML= ""
     document.getElementById("titulofavs").innerHTML= "Contenido favorito: "
     if (!favslistada){
         for (let i = 0; i < localStorage.length; i++){
@@ -164,5 +188,4 @@ function verFavs(){
             listafavs.appendChild(li)
         }
     }
-    favslistada= true
 }
